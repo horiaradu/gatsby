@@ -45,7 +45,7 @@ const getPosts = maxId => {
   if (maxId) url += `?max_id=${maxId}`
 
   request(url, { encoding: `utf8` }, (err, res, body) => {
-    if (err) console.log(`error: ${err}`)
+    if (err) 
     body = JSON.parse(body)
     // Parse posts
     let lastId
