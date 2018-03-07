@@ -86,7 +86,7 @@ function CallSiteToString() {
       fileLocation += `<anonymous>`
     }
     let lineNumber = this.getLineNumber()
-    if (lineNumber != null) {
+    if (lineNumber !== null) {
       fileLocation += `:${lineNumber}`
       let columnNumber = this.getColumnNumber()
       if (columnNumber) {
@@ -105,13 +105,13 @@ function CallSiteToString() {
     methodName && !((this.isToplevel && this.isToplevel()) || isConstructor)
   if (isMethodCall && functionName) {
     if (functionName) {
-      if (typeName && functionName.indexOf(typeName) != 0) {
+      if (typeName && functionName.indexOf(typeName) !== 0) {
         line += `${typeName}.`
       }
       line += functionName
       if (
         methodName &&
-        functionName.indexOf(`.` + methodName) !=
+        functionName.indexOf(`.` + methodName) !==
           functionName.length - methodName.length - 1
       ) {
         line += ` [as ${methodName}]`
